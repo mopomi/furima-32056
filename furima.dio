@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2020-11-24T06:59:21.720Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" version="13.6.5" etag="4b0kRx-lydqOd9jBXbOQ">
+<mxfile host="65bd71144e" modified="2020-11-24T07:27:05.787Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" version="13.6.5" etag="XNwWsj7JrE5FPEouora9">
     <diagram id="pAn4AHUUTgOaKvMXLmUd" name="ページ1">
         <mxGraphModel dx="1677" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
@@ -58,7 +58,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="6" value="itemsテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;direction=east;" vertex="1" parent="1">
-                    <mxGeometry x="-760" y="440" width="260" height="260" as="geometry"/>
+                    <mxGeometry x="-760" y="440" width="260" height="290" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="title（string型、NOT NULL）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="6">
                     <mxGeometry y="26" width="260" height="30" as="geometry"/>
@@ -66,8 +66,8 @@
                 <mxCell id="8" value="Introduction（text型、NOT NULL）&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="6">
                     <mxGeometry y="56" width="260" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="category_id（integer型、NOT NULL）&#10;&#10;item_condition_id（integer型、NOT NULL）&#10;&#10;prefecture_id（integer型、NOT NULL）&#10;&#10;shipping_from_id（integer型、NOT NULL）&#10;&#10;days_to_ship_id（integer型、NOT NULL）&#10;&#10;user（references型）&#10;&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="6">
-                    <mxGeometry y="86" width="260" height="174" as="geometry"/>
+                <mxCell id="9" value="category_id（integer型、NOT NULL）&#10;&#10;item_condition_id（integer型、NOT NULL）&#10;&#10;prefecture_id（integer型、NOT NULL）&#10;&#10;shipping_from_id（integer型、NOT NULL）&#10;&#10;days_to_ship_id（integer型、NOT NULL）&#10;&#10;price（string型、NOT NULL）&#10;&#10;user（references型）&#10;&#10;&#10;&#10;&#10;&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="6">
+                    <mxGeometry y="86" width="260" height="204" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
