@@ -18,7 +18,6 @@
 
 - has_many :items, dependent: :destroy
 - has_many :purchase_histories, dependent: :destroy
-- has_one :shipping_address, dependent: :destroy
 
 
 ## items テーブル
@@ -30,7 +29,7 @@
 | category_id         | integer    | null: false, foreign_key:true |
 | item_condition_id   | integer    | null: false, foreign_key:true |
 | shipping_payer_id   | integer    | null: false, foreign_key:true |
-| shipping_from_id    | integer    | null: false, foreign_key:true |
+| prefecture_id       | integer    | null: false, foreign_key:true |
 | days_to_ship_id     | integer    | null: false, foreign_key:true |
 | user                | references | null: false, foreign_key:true |
 
@@ -45,7 +44,7 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| post_code     | integer    | null: false                    |
+| post_code     | string     | null: false                    |
 | prefecture_id | integer    | null: false, foreign_key:true  |
 | city          | string     | null: false                    |
 | house_number  | string     | null: false                    |
@@ -55,7 +54,7 @@
 
 ### Association
 
-- belongs_to :user
+- belongs_to :purchase_history
 
 
 ## purchase_histories テーブル
@@ -69,4 +68,4 @@
 
 - belongs_to :item
 - belongs_to :user
-
+- has_one :shipping_address
