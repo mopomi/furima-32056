@@ -4,6 +4,10 @@ describe User do
       @user = FactoryBot.build(:user)
   end
 
+   it "nameとemail、passwordとpassword_confirmation、first_name、last_name、first_name_kana、last_name_kana、birthdayが存在すれば登録できること" do
+    expect(@user).to be_valid
+   end
+
    it "nameがない場合は登録できないこと" do
      @user.name = ""
      @user.valid?
@@ -28,13 +32,6 @@ describe User do
      expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
    end
 
-   it " passwordが6文字以上であれば登録できること " do
-     @user.password = "11111a"
-     @user.password_confirmation = "11111a"
-     @user.valid?
-     expect(@user).to be_valid
-   end
-
    it " passwordが5文字以下であれば登録できないこと " do
      @user.password = "1111a"
      @user.password_confirmation = "1111a"
@@ -56,10 +53,17 @@ describe User do
     expect(@user.errors.full_messages).to include "Password is invalid"
    end
 
-   it "emailに@とドメインが存在する場合は登録できること " do
-     @user.email = "ttt@gmail.com"
+   it " passwordが全角では登録できないこと " do
+    @user.password = "１１１１１１"
+    @user.password_confirmation = "１１１１１１"
+    @user.valid?
+    expect(@user.errors.full_messages).to include "Password is invalid"
+   end
+
+   it "emailに@がないと登録できないこと " do
+     @user.email = "tttgmail.com"
      @user.valid?
-     expect(@user).to be_valid
+     expect(@user.errors.full_messages).to include "Email is invalid"
    end
 
    it " 重複したemailが存在する場合は登録できないこと " do
@@ -122,10 +126,5 @@ describe User do
      @user.birthday = ""
      @user.valid?
      expect(@user.errors.full_messages).to include "Birthday can't be blank"
-   end
-
-   it "nameとemail、passwordとpassword_confirmation、first_name、last_name、first_name_kana、last_name_kana、birthdayが存在すれば登録できること" do
-     @user = FactoryBot.build(:user)
-     expect(@user).to be_valid
    end
 end
