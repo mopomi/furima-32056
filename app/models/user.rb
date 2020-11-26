@@ -17,7 +17,4 @@ class User < ApplicationRecord
      validates :birthday
      validates :password, format: { with: VALID_PASSWORD_REGEX }
   end
-
-     
-
 end
