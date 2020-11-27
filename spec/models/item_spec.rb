@@ -69,4 +69,10 @@ describe User do
     @item.valid?
     expect(@item.errors.full_messages).to include 'Price must be greater than or equal to 300'
   end
+
+  it 'price(価格)が全角数字の場合は登録できないこと' do
+    @item.price = '１０００'
+    @item.valid?
+    expect(@item.errors.full_messages).to include 'Price is invalid'
+  end
 end
