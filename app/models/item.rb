@@ -10,9 +10,9 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :image
-    validates :title
-    validates :introduction
-    validates :price
+    validates :title, length:{maximum:40}
+    validates :introduction, length:{maximum:1000}
+    validates :price, format: { with: /\A[0-9]+\z/ }, numericality: { greater_than_or_equal_to: 333, less_than_or_equal_to: 9999999 }
     validates :category_id, numericality: { other_than: 1 }
     validates :item_condition_id, numericality: { other_than: 1 } 
     validates :shipping_payer_id, numericality: { other_than: 1 } 
