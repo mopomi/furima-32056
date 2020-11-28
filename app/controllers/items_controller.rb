@@ -40,6 +40,7 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def item_params
     params.require(:item).permit(:title, :introduction, :category_id, :item_condition_id, :shipping_payer_id,
                                  :prefecture_id, :days_to_ship_id, :price, :image).merge(user_id: current_user.id)
@@ -54,7 +55,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 end
-
 
 # 「ログイン状態で、URLを直接入力して売却済み商品の商品情報編集ページへ遷移しようとすると、トップページに遷移すること」
 # ★↑before_actionにて商品購入機能実装時に実装する★
