@@ -127,7 +127,7 @@
     <ul class='item-lists'>
       <% @items.each do |item| %>
       <li class='list'>
-        <%= link_to "#" do %>
+        <%= link_to item_path(item.id), method: :get do %>
         <div class='item-img-content'>
           <%= image_tag item.image, class: "item-img" %>
 
@@ -139,10 +139,10 @@
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= link_to item.title, "#" %>
+            <%= link_to item.title, item_path(item.id), method: :get %>
           </h3>
           <div class='item-price'>
-            <span><%= link_to item.price, "#" %>円<br><%= link_to item.shipping_payer.name, "#" %></span>
+            <span><%= link_to item.price, item_path(item.id), method: :get %>円<br><%= link_to item.shipping_payer.name, item_path(item.id), method: :get %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
