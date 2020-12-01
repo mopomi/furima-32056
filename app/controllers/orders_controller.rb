@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item
   before_action :move_to_index
+  before_action :move_to_index_order
 
   def index
     @address_purchase = AddressPurchase.new
@@ -30,7 +31,7 @@ class OrdersController < ApplicationController
   end
 
   def move_to_index
-    redirect_to root_path unless @item.user != current_user
+    redirect_to root_path if @item.user == current_user
   end
 
   def pay_item
@@ -42,5 +43,8 @@ class OrdersController < ApplicationController
     )
   end
 
+  def move_to_index_order
+    redirect_to  root_path unless @item.purchase_history.blank?
+  end
 
 end
