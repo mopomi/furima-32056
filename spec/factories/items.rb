@@ -7,6 +7,6 @@ FactoryBot.define do
     shipping_payer_id   { 2 }
     prefecture_id       { 2 }
     days_to_ship_id { 2 }
-    price { 10_000 }
+    price { 10000 }
   end
 end
